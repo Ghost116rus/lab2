@@ -1,0 +1,39 @@
+
+.container {
+    max-width: 855px;
+    padding-top: 15px;
+    margin: auto;
+
+}
+
+.content {
+
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.content ul li {
+    background: #eee;
+    margin-top: 5px;
+    border-radius: 5px;
+    width: 800px;
+}
+
+.tabs a span {
+    display: inline-block;
+    border-radius: 5px 5px 0 0;
+    width: 100px;
+    margin-right: 10px;
+    text-align: center;
+    background: #ddd;
+    padding: 5px 5px 5px 0;
+}
+
+.tabs a span.active {
+    background: #eee;
+}
+
+.test {
+
+}
