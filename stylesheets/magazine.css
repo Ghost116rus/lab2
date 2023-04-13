@@ -23,6 +23,7 @@
     display: inline-block;
     border-radius: 5px 5px 0 0;
     width: 100px;
+    height: 40px;
     margin-right: 10px;
     text-align: center;
     background: #ddd;
@@ -33,6 +34,27 @@
     background: #eee;
 }
 
-.test {
+.addContent {
+    text-align: center;
+    margin: 10px;
+    height: 200px;
+}
+.addContent input, textarea {
+    margin: 10px;
+}
+.addContent button {
+    border-radius: 5px;
+    height: 30px;
+}
 
+.checkB {
+    display: inline-block;
+}
+.myinputImg {
+    width: 300px;
+}
+.myinputDsc {
+    width: 300px;
+    height: 100px;
+    margin-bottom: -90px;
 }
