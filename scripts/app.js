@@ -1,47 +1,55 @@
 class Medicine{
     description;
     imageSrc;
-    constructor(description, imageSrc){
+    tags = [];
+    constructor(description, imageSrc, tags){
         this.description = description;
         this.imageSrc = imageSrc;
+        this.tags = tags;
     }
 }
 
+/*
 var Special = [
-    new Medicine("СофтЛайф премиум ватные палочки на бумажной основе с добавлением бамбука №100","../img/medecine/1.jpg"),
-    new Medicine("СофтЛайф премиум ватные диски прямоугольные черные №80","../img/medecine/2.jpg"),
-    new Medicine("Будь Здоров! Рыбный жир 75мл","../img/medecine/3.jpg"),
-    new Medicine("Будь Здоров! Грин фиточай Фитосбор №1 толокнянка ф/п 2г №20","../img/medecine/4.jpg"),
-    new Medicine("АВС хэлси фуд клетчатка Сибирская стопаппетит 8,5г №14","../img/medecine/5.jpg")
+    new Medicine("СофтЛайф премиум ватные палочки на бумажной основе с добавлением бамбука №100","../img/medecine/1.jpg", ["Акция", "Для взрослых"]),
+    new Medicine("СофтЛайф премиум ватные диски прямоугольные черные №80","../img/medecine/2.jpg", ["Акция", "Для взрослых"]),
+    new Medicine("Будь Здоров! Рыбный жир 75мл","../img/medecine/3.jpg", ["Для взрослых", "Противопростутдные"]),
+    new Medicine("Будь Здоров! Грин фиточай Фитосбор №1 толокнянка ф/п 2г №20","../img/medecine/4.jpg", ["Для взрослых", "Противопростутдные"]),
+    new Medicine("АВС хэлси фуд клетчатка Сибирская стопаппетит 8,5г №14","../img/medecine/5.jpg", ["Для детей", "Противовирусные"])
 ];
 
 var Medicines =
     [
-        new Medicine("СофтЛайф премиум ватные палочки на бумажной основе с добавлением бамбука №100","../img/medecine/1.jpg"),
-        new Medicine("СофтЛайф премиум ватные диски прямоугольные черные №80","../img/medecine/2.jpg"),
-        new Medicine("Будь Здоров! Рыбный жир 75мл","../img/medecine/3.jpg"),
-        new Medicine("Будь Здоров! Грин фиточай Фитосбор №1 толокнянка ф/п 2г №20","../img/medecine/4.jpg"),
-        new Medicine("АВС хэлси фуд клетчатка Сибирская стопаппетит 8,5г №14","../img/medecine/5.jpg"),
-        new Medicine("Инвитро Здоровье щитовидной железы","https://cdn.budzdorov.ru/media/catalog/product/cache/1e8ef93b9b4867ab9f3538dde2cb3b8a/1/1/113044-c-0-8-9-c089a3e77f904efd2884c5ab3cdad57d3b9ebc0b_113044.jpg"),
-        new Medicine("СофтЛайф премиум ватные палочки на бумажной основе с добавлением бамбука №100","../img/medecine/1.jpg"),
-        new Medicine("СофтЛайф премиум ватные диски прямоугольные черные №80","../img/medecine/2.jpg"),
-        new Medicine("Будь Здоров! Рыбный жир 75мл","../img/medecine/3.jpg"),
-        new Medicine("Будь Здоров! Грин фиточай Фитосбор №1 толокнянка ф/п 2г №20","../img/medecine/4.jpg"),
-        new Medicine("АВС хэлси фуд клетчатка Сибирская стопаппетит 8,5г №14","../img/medecine/5.jpg"),
-        new Medicine("Инвитро Здоровье щитовидной железы","https://cdn.budzdorov.ru/media/catalog/product/cache/1e8ef93b9b4867ab9f3538dde2cb3b8a/1/1/113044-c-0-8-9-c089a3e77f904efd2884c5ab3cdad57d3b9ebc0b_113044.jpg"),
-        new Medicine("СофтЛайф премиум ватные палочки на бумажной основе с добавлением бамбука №100","../img/medecine/1.jpg"),
-        new Medicine("СофтЛайф премиум ватные диски прямоугольные черные №80","../img/medecine/2.jpg"),
-        new Medicine("Будь Здоров! Рыбный жир 75мл","../img/medecine/3.jpg"),
-        new Medicine("Будь Здоров! Грин фиточай Фитосбор №1 толокнянка ф/п 2г №20","../img/medecine/4.jpg"),
-        new Medicine("АВС хэлси фуд клетчатка Сибирская стопаппетит 8,5г №14","../img/medecine/5.jpg"),
-        new Medicine("Инвитро Здоровье щитовидной железы","https://cdn.budzdorov.ru/media/catalog/product/cache/1e8ef93b9b4867ab9f3538dde2cb3b8a/1/1/113044-c-0-8-9-c089a3e77f904efd2884c5ab3cdad57d3b9ebc0b_113044.jpg"),
-        new Medicine("СофтЛайф премиум ватные палочки на бумажной основе с добавлением бамбука №100","../img/medecine/1.jpg"),
-        new Medicine("СофтЛайф премиум ватные диски прямоугольные черные №80","../img/medecine/2.jpg"),
-        new Medicine("Будь Здоров! Рыбный жир 75мл","../img/medecine/3.jpg"),
-        new Medicine("Будь Здоров! Грин фиточай Фитосбор №1 толокнянка ф/п 2г №20","../img/medecine/4.jpg"),
-        new Medicine("АВС хэлси фуд клетчатка Сибирская стопаппетит 8,5г №14","../img/medecine/5.jpg"),
-        new Medicine("Инвитро Здоровье щитовидной железы","https://cdn.budzdorov.ru/media/catalog/product/cache/1e8ef93b9b4867ab9f3538dde2cb3b8a/1/1/113044-c-0-8-9-c089a3e77f904efd2884c5ab3cdad57d3b9ebc0b_113044.jpg"),
+        new Medicine("СофтЛайф премиум ватные палочки на бумажной основе с добавлением бамбука №100","../img/medecine/1.jpg", ["Акция", "Для взрослых"]),
+        new Medicine("СофтЛайф премиум ватные диски прямоугольные черные №80","../img/medecine/2.jpg", ["Акция", "Для взрослых"]),
+        new Medicine("Будь Здоров! Рыбный жир 75мл","../img/medecine/3.jpg", ["Для взрослых", "Противопростутдные"]),
+        new Medicine("Будь Здоров! Грин фиточай Фитосбор №1 толокнянка ф/п 2г №20","../img/medecine/4.jpg", ["Для взрослых", "Противопростутдные"]),
+        new Medicine("АВС хэлси фуд клетчатка Сибирская стопаппетит 8,5г №14","../img/medecine/5.jpg", ["Для детей", "Противовирусные"]),
+        new Medicine("Инвитро Здоровье щитовидной железы","https://cdn.budzdorov.ru/media/catalog/product/cache/1e8ef93b9b4867ab9f3538dde2cb3b8a/1/1/113044-c-0-8-9-c089a3e77f904efd2884c5ab3cdad57d3b9ebc0b_113044.jpg", ["Для взрослых", "Противовирусные", "Противопростутдные"]),
+
+        new Medicine("СофтЛайф премиум ватные палочки на бумажной основе с добавлением бамбука №100","../img/medecine/1.jpg", ["Акция", "Для взрослых"]),
+        new Medicine("СофтЛайф премиум ватные диски прямоугольные черные №80","../img/medecine/2.jpg", ["Акция", "Для взрослых"]),
+        new Medicine("Будь Здоров! Рыбный жир 75мл","../img/medecine/3.jpg", ["Для взрослых", "Противопростутдные"]),
+        new Medicine("Будь Здоров! Грин фиточай Фитосбор №1 толокнянка ф/п 2г №20","../img/medecine/4.jpg", ["Для взрослых", "Противопростутдные"]),
+        new Medicine("АВС хэлси фуд клетчатка Сибирская стопаппетит 8,5г №14","../img/medecine/5.jpg", ["Для детей", "Противовирусные"]),
+        new Medicine("Инвитро Здоровье щитовидной железы","https://cdn.budzdorov.ru/media/catalog/product/cache/1e8ef93b9b4867ab9f3538dde2cb3b8a/1/1/113044-c-0-8-9-c089a3e77f904efd2884c5ab3cdad57d3b9ebc0b_113044.jpg", ["Для взрослых", "Противовирусные", "Противопростутдные"]),
+
+        new Medicine("СофтЛайф премиум ватные палочки на бумажной основе с добавлением бамбука №100","../img/medecine/1.jpg", ["Акция", "Для взрослых"]),
+        new Medicine("СофтЛайф премиум ватные диски прямоугольные черные №80","../img/medecine/2.jpg", ["Акция", "Для взрослых"]),
+        new Medicine("Будь Здоров! Рыбный жир 75мл","../img/medecine/3.jpg", ["Для взрослых", "Противопростутдные"]),
+        new Medicine("Будь Здоров! Грин фиточай Фитосбор №1 толокнянка ф/п 2г №20","../img/medecine/4.jpg", ["Для взрослых", "Противопростутдные"]),
+        new Medicine("АВС хэлси фуд клетчатка Сибирская стопаппетит 8,5г №14","../img/medecine/5.jpg", ["Для детей", "Противовирусные"]),
+        new Medicine("Инвитро Здоровье щитовидной железы","https://cdn.budzdorov.ru/media/catalog/product/cache/1e8ef93b9b4867ab9f3538dde2cb3b8a/1/1/113044-c-0-8-9-c089a3e77f904efd2884c5ab3cdad57d3b9ebc0b_113044.jpg", ["Для взрослых", "Противовирусные", "Противопростутдные"]),
+
     ];
+
+var tags =
+    [
+        "Для детей",
+        "Для взрослых",
+        "Противовирусные",
+        "Противопростутдные"
+    ]*/
 
 
 var makeContent = function(Container, medicine) {
@@ -55,16 +63,20 @@ var makeContent = function(Container, medicine) {
         }).appendTo(offers);
         var image = $('<a/>').attr("href", "DeliveryPage.html").appendTo(offer);
         var medicineImage = $('<img>', {
-            src: medic.imageSrc,
-            class: 'lazy',
+            src: medic.imageSrc
         });
         medicineImage.attr("data-src", medic.imageSrc);
         medicineImage.appendTo(image);
+        medic.tags.forEach(function (description) {
+            $('<p/>', {
+                text: description
+            }).appendTo(offer);
+        })
         $('<a/>', {
             href: "DeliveryPage.html",
             text: medic.description
         }).appendTo(offer);
-        console.log(medic.imageSrc)
+
     });
 }
 
@@ -103,8 +115,32 @@ class AddContent{
 
 
 
-var main = function () {
+var main = function (HealthObjects) {
     "use strict";
+
+    var Special = [];
+    var Medicines = [];
+    var tags = [];
+
+    HealthObjects.forEach((e) => {
+        var medicine = new Medicine(e.description, e.img, e.tags);
+        Medicines.push(medicine);
+
+        e.tags.forEach((tag) => {
+            if (tags.indexOf(tag) === -1)
+            {
+                tags.push(tag);
+            }
+        })
+
+        if (e.isSpecial)
+        {
+            Special.push(medicine);
+        }
+
+    });
+
+    //console.log(HealthObjects);
 
     $(".tabs a span").toArray().forEach(function (element) {
         //создаем обработку щелчков для этого элемента
@@ -121,8 +157,8 @@ var main = function () {
             } else if ($element.parent().is(":nth-child(2)")) {
                 $content = $("<div>");
                 makeContent($content, Medicines);
-
-            } else if ($element.parent().is(":nth-child(3)")) {
+            }
+            else if ($element.parent().is(":nth-child(3)")) {
                 $content = $("<div/>", {
                     class: 'addContent'
                 });
@@ -164,6 +200,40 @@ var main = function () {
                         click: AddContent.AddToContent
                     }).appendTo($content);
             }
+            else if ($element.parent().is(":nth-child(4)")) {
+                $content = $("<div>");
+                var offers = $('<div/>', {
+                    class:  'offers',
+                }).appendTo($content);
+                tags.forEach(function (description) {
+                    $('<p/>', {
+                        text: description
+                    }).appendTo(offers);
+
+                });
+            } else if ($element.parent().is(":nth-child(5)")) {
+                $content = $("<div/>", {
+                    class: 'addContent'
+                });
+
+                $('<textarea/>').attr({
+                    id:     'description1',
+                    type: 	'text',
+                    name: 	'description',
+                    class:  'myinputDsc',
+                    placeholder: 	'Название тега'
+                }).appendTo($content);
+
+                $('<button/>',
+                    {
+                        text: 'Добавить тег',
+                    }).appendTo($content);
+
+
+            }
+
+
+
             $("main .content").append($content);
 
         })
@@ -173,4 +243,9 @@ var main = function () {
 
 };
 
-$(document).ready(main);
+$(document).ready(() => {
+    $.getJSON("../data/Medicine.json", function (HealthObjects) {
+    // вызов функции main с аргументом в виде объекта toDoObjects
+        main(HealthObjects);
+    });
+});
